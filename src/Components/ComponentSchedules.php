@@ -55,7 +55,7 @@ class ComponentSchedules
     {
         $data = new ScheduleResource($this->component->schedule);
 
-        foreach (Arr::get($data, 'data.events.data') as $event) {
+        foreach (Arr::get($data, 'events', []) as $event) {
             if (Arr::get($event, 'is_visible') == false) {
                 continue;
             }
